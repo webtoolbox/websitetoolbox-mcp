@@ -307,8 +307,9 @@ export class ApiClient {
 
   // ── Conversations ───────────────────────────────────────
 
-  async listConversations(params?: { limit?: number; page?: number }) {
+  async listConversations(params?: { userId?: number; limit?: number; page?: number }) {
     const qp: Record<string, string> = {};
+    if (params?.userId) qp.userId = String(params.userId);
     if (params?.limit) qp.limit = String(params.limit);
     if (params?.page) qp.page = String(params.page);
     return this.request("GET", "/api/conversations", undefined, qp);

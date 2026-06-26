@@ -337,10 +337,11 @@ server.tool("remove_users_from_group", "Remove users from a user group", {
 // ── Conversations ───────────────────────────────────────
 
 server.tool("list_conversations", "List private conversations", {
+  userId: z.number().describe("User ID (required)"),
   limit: z.number().optional().describe("Max conversations to return (1–100)"),
   page: z.number().optional().describe("Page number"),
-}, async ({ limit, page }) => {
-  const data = await client.listConversations({ limit, page });
+}, async ({ userId, limit, page }) => {
+  const data = await client.listConversations({ userId, limit, page });
   return { content: [{ type: "text", text: JSON.stringify(data, null, 2) }] };
 });
 
