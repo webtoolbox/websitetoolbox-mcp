@@ -73,7 +73,7 @@ node dist/index.js
 
 ## API Reference
 
-This MCP server wraps the [Website Toolbox REST API](https://api.websitetoolbox.com). See the full API documentation at [docs/api/index.html.md](https://github.com/webtoolbox/Website-Toolbox/blob/main/docs/api/index.html.md) in the main Website Toolbox repo.
+This MCP server wraps the [Website Toolbox REST API](https://www.websitetoolbox.com/docs/api/). See the full API documentation at [https://www.websitetoolbox.com/docs/api/](https://www.websitetoolbox.com/docs/api/) or the [API Documentation](https://www.websitetoolbox.com/support/api-documentation-663) support article for details on authentication, endpoints, and rate limits.
 
 ## License
 
