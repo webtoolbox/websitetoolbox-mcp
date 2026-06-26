@@ -45,7 +45,9 @@ Or use a `.env` file (copy `.env.example` to `.env` and fill in your key).
 
 ## Usage
 
-### With Claude Desktop
+This server works with any tool that supports MCP. Below are examples.
+
+### Claude Desktop
 
 Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_desktop_config.json`):
 
@@ -63,7 +65,7 @@ Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_
 }
 ```
 
-### With other MCP clients
+### Other MCP clients
 
 Run the server on stdio:
 
