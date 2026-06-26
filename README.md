@@ -45,7 +45,7 @@ Or use a `.env` file (copy `.env.example` to `.env` and fill in your key).
 
 ## Usage
 
-This server works with any tool that supports MCP, such as:
+This server works with any tool that supports MCP, such as Claude Desktop and Hermes Agent.
 
 ### Claude Desktop
 
