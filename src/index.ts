@@ -496,6 +496,17 @@ server.tool("list_post_edits", "List edit history for a post", {
   return { content: [{ type: "text", text: JSON.stringify(data, null, 2) }] };
 });
 
+// ── Topic Followers ─────────────────────────────────────
+
+server.tool("list_topic_followers", "List users following a topic (admin/moderator only)", {
+  topicId: z.number().describe("The topic ID"),
+  limit: z.number().optional().describe("Max results (1–100)"),
+  page: z.number().optional().describe("Page number"),
+}, async ({ topicId, limit, page }) => {
+  const data = await client.listTopicFollowers(topicId, { limit, page });
+  return { content: [{ type: "text", text: JSON.stringify(data, null, 2) }] };
+});
+
 // ── Start ───────────────────────────────────────────────
 
 async function main() {

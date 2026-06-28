@@ -451,4 +451,13 @@ export class ApiClient {
     if (params?.page) qp.page = String(params.page);
     return this.request("GET", `/api/posts/${postId}/edits`, undefined, qp);
   }
+
+  // ── Topic Followers ─────────────────────────────────────
+
+  async listTopicFollowers(topicId: number, params?: { limit?: number; page?: number }) {
+    const qp: Record<string, string> = {};
+    if (params?.limit) qp.limit = String(params.limit);
+    if (params?.page) qp.page = String(params.page);
+    return this.request("GET", `/api/topics/${topicId}/followers`, undefined, qp);
+  }
 }
