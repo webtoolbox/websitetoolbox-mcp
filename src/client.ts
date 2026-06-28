@@ -433,4 +433,22 @@ export class ApiClient {
     if (params?.page) qp.page = String(params.page);
     return this.request("GET", "/api/page_views", undefined, qp);
   }
+
+  // ── Notifications ───────────────────────────────────────
+
+  async listNotifications(params?: { limit?: number; page?: number }) {
+    const qp: Record<string, string> = {};
+    if (params?.limit) qp.limit = String(params.limit);
+    if (params?.page) qp.page = String(params.page);
+    return this.request("GET", "/api/notifications", undefined, qp);
+  }
+
+  // ── Post Edits ──────────────────────────────────────────
+
+  async listPostEdits(postId: number, params?: { limit?: number; page?: number }) {
+    const qp: Record<string, string> = {};
+    if (params?.limit) qp.limit = String(params.limit);
+    if (params?.page) qp.page = String(params.page);
+    return this.request("GET", `/api/posts/${postId}/edits`, undefined, qp);
+  }
 }

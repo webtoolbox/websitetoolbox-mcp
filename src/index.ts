@@ -475,6 +475,27 @@ server.tool("list_page_views", "List forum page view analytics", {
   return { content: [{ type: "text", text: JSON.stringify(data, null, 2) }] };
 });
 
+// ── Notifications ───────────────────────────────────────
+
+server.tool("list_notifications", "List notifications for the authenticated user", {
+  limit: z.number().optional().describe("Max results (1–100)"),
+  page: z.number().optional().describe("Page number"),
+}, async ({ limit, page }) => {
+  const data = await client.listNotifications({ limit, page });
+  return { content: [{ type: "text", text: JSON.stringify(data, null, 2) }] };
+});
+
+// ── Post Edits ──────────────────────────────────────────
+
+server.tool("list_post_edits", "List edit history for a post", {
+  postId: z.number().describe("The post ID"),
+  limit: z.number().optional().describe("Max results (1–100)"),
+  page: z.number().optional().describe("Page number"),
+}, async ({ postId, limit, page }) => {
+  const data = await client.listPostEdits(postId, { limit, page });
+  return { content: [{ type: "text", text: JSON.stringify(data, null, 2) }] };
+});
+
 // ── Start ───────────────────────────────────────────────
 
 async function main() {
