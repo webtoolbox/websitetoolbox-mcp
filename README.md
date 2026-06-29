@@ -20,28 +20,47 @@ Model Context Protocol server for the [Website Toolbox](https://www.websitetoolb
 ## Prerequisites
 
 - Node.js ≥ 18
-- A Website Toolbox API key (get one from your forum's **Integrate → API** settings)
 
 ## Install
 
+### From npm (recommended)
+
 ```bash
+npm install -g websitetoolbox-mcp
+```
+
+### From source
+
+```bash
+git clone https://github.com/webtoolbox/websitetoolbox-mcp
+cd websitetoolbox-mcp
 npm install
 npm run build
 ```
 
 ## Configure
 
-Set environment variables:
+1. **Get your API key** from your forum's **Integrate → API** settings.
+
+2. **Set it as an environment variable:**
 
 ```bash
 export WEBSITETOOLBOX_API_KEY="your-api-key"
-
-# Optional — act as a specific user
-export WEBSITETOOLBOX_USERNAME="admin"
-export WEBSITETOOLBOX_EMAIL="admin@example.com"
 ```
 
-Or use a `.env` file (copy `.env.example` to `.env` and fill in your key).
+   On **Windows**:
+
+   ```cmd
+   set WEBSITETOOLBOX_API_KEY=***   ```
+
+   Or create a `.env` file (copy `.env.example` to `.env` and fill in your key).
+
+3. **Optional** — act as a specific user:
+
+   ```bash
+   export WEBSITETOOLBOX_USERNAME="admin"
+   export WEBSITETOOLBOX_EMAIL="admin@example.com"
+   ```
 
 ## Usage
 
@@ -49,14 +68,14 @@ This server works with any tool that supports MCP, such as Claude Desktop and He
 
 ### Claude Desktop
 
-Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_desktop_config.json`):
+Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_desktop_config.json`). If installed globally via npm:
 
 ```json
 {
   "mcpServers": {
     "websitetoolbox": {
-      "command": "node",
-      "args": ["/absolute/path/to/websitetoolbox-mcp/dist/index.js"],
+      "command": "npx",
+      "args": ["websitetoolbox-mcp"],
       "env": {
         "WEBSITETOOLBOX_API_KEY": "your-api-key"
       }
@@ -70,7 +89,7 @@ Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_
 Run the server on stdio:
 
 ```bash
-node dist/index.js
+npx websitetoolbox-mcp
 ```
 
 ## API Reference
