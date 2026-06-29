@@ -1,16 +1,20 @@
 {
   "name": "io.github.webtoolbox/websitetoolbox-mcp",
-  "description": "MCP server for the Website Toolbox community forum platform — manage Categories, Topics, Posts, Users, User Groups, Conversations, Messages, Moderators, Tags, and Page Views via the Forum REST API.",
+  "description": "MCP server for Website Toolbox community forum - manage forums, topics, posts, users via REST API.",
   "version": "1.0.0",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "websitetoolbox-mcp",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "transport": {
+        "type": "stdio"
+      }
     }
   ],
   "repository": {
     "url": "https://github.com/webtoolbox/websitetoolbox-mcp",
     "source": "github"
-  }
+  },
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json"
 }
