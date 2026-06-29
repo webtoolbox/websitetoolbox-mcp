@@ -1,0 +1,15 @@
+# Smithery configuration for websitetoolbox-mcp
+# https://smithery.ai/
+
+runtime: node
+entrypoint: dist/index.js
+env:
+  WEBSITETOOLBOX_API_KEY:
+    description: "Your Website Toolbox API key (from Integrate → API settings)"
+    required: true
+  WEBSITETOOLBOX_USERNAME:
+    description: "Username to act as (optional)"
+    required: false
+  WEBSITETOOLBOX_EMAIL:
+    description: "Email for the user (optional)"
+    required: false

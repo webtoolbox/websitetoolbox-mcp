@@ -1,7 +1,7 @@
 {
   "name": "websitetoolbox-mcp",
   "version": "1.0.0",
-  "description": "MCP server for Website Toolbox forum — exposes Categories, Topics, Posts, Users, and more via the Forum REST API",
+  "description": "MCP server for Website Toolbox forum \u2014 exposes Categories, Topics, Posts, Users, and more via the Forum REST API",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
@@ -26,5 +26,15 @@
   "devDependencies": {
     "@types/node": "^22.0.0",
     "typescript": "^5.7.0"
-  }
+  },
+  "mcpName": "io.github.webtoolbox/websitetoolbox-mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webtoolbox/websitetoolbox-mcp.git"
+  },
+  "homepage": "https://github.com/webtoolbox/websitetoolbox-mcp",
+  "bugs": {
+    "url": "https://github.com/webtoolbox/websitetoolbox-mcp/issues"
+  },
+  "author": "Website Toolbox <sandeep@websitetoolbox.com>"
 }

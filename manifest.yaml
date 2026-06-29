@@ -1,0 +1,58 @@
+manifest_version: 1
+
+name: websitetoolbox-mcp
+description: MCP server for the Website Toolbox forum platform — exposes Categories, Topics, Posts, Users, User Groups, Conversations, Messages, Moderators, Tags, and Page Views via the Forum REST API.
+source: https://github.com/webtoolbox/websitetoolbox-mcp
+
+transport:
+  type: stdio
+  command: node
+  args:
+    - "${INSTALL_DIR}/dist/index.js"
+
+install:
+  type: git
+  url: https://github.com/webtoolbox/websitetoolbox-mcp.git
+  ref: main
+  bootstrap:
+    - npm install
+    - npm run build
+
+auth:
+  type: api_key
+  env:
+    - name: WEBSITETOOLBOX_API_KEY
+      prompt: "Your Website Toolbox API key (from Integrate → API settings)"
+      required: true
+      secret: true
+    - name: WEBSITETOOLBOX_USERNAME
+      prompt: "Username to act as (optional)"
+      required: false
+      secret: false
+    - name: WEBSITETOOLBOX_EMAIL
+      prompt: "Email for the user (optional)"
+      required: false
+      secret: false
+
+tools:
+  default_enabled:
+    - list_categories
+    - get_category
+    - list_topics
+    - get_topic
+    - list_posts
+    - get_post
+    - list_users
+    - get_user
+    - list_conversations
+    - get_conversation
+    - list_messages
+    - list_tags
+    - list_page_views
+
+post_install: |
+  To get your API key, go to your forum's admin area → Integrate → API.
+  Set WEBSITETOOLBOX_API_KEY to your API key.
+
+  For full API documentation, visit:
+  https://www.websitetoolbox.com/docs/api/
