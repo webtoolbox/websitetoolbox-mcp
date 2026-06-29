@@ -1,6 +1,6 @@
 # Website Toolbox MCP
 
-Model Context Protocol server for the [Website Toolbox](https://www.websitetoolbox.com) forum platform. Exposes the Forum REST API as MCP tools that any MCP-compatible client (Claude Desktop, Cursor, etc.) can use.
+Model Context Protocol server for the [Website Toolbox](https://www.websitetoolbox.com) community forum platform. Exposes the Forum REST API as MCP tools that any MCP-compatible client (Claude Desktop, Cursor, Hermes Agent, etc.) can use to manage your community forum.
 
 ## Features
 

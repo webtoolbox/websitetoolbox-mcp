@@ -1,6 +1,6 @@
 {
   "name": "io.github.webtoolbox/websitetoolbox-mcp",
-  "description": "MCP server for the Website Toolbox forum platform — exposes Categories, Topics, Posts, Users, User Groups, Conversations, Messages, Moderators, Tags, and Page Views via the Forum REST API.",
+  "description": "MCP server for the Website Toolbox community forum platform — manage Categories, Topics, Posts, Users, User Groups, Conversations, Messages, Moderators, Tags, and Page Views via the Forum REST API.",
   "version": "1.0.0",
   "packages": [
     {
