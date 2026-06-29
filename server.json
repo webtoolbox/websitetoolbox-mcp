@@ -1,6 +1,6 @@
 {
   "name": "io.github.webtoolbox/websitetoolbox-mcp",
-  "description": "MCP server for Website Toolbox community forum - manage forums, topics, posts, users via REST API.",
+  "description": "Community forum management \u2014 posts, users, search, and moderation via the Website Toolbox API.",
   "version": "1.0.0",
   "packages": [
     {
