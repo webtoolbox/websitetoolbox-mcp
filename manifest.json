@@ -1,0 +1,83 @@
+{
+  "manifest_version": "0.3",
+  "name": "websitetoolbox-mcp",
+  "display_name": "Website Toolbox Forum",
+  "version": "1.0.0",
+  "description": "Chat with your forum using AI. Manage categories, topics, posts, users, and private messages on your Website Toolbox community.",
+  "long_description": "The Website Toolbox MCP server connects your AI assistant to your forum. You can list, create, edit, and delete categories, topics, and posts. Manage users, user groups, and moderators. Send and read private messages. View analytics, tags, notifications, and more. Requires a Website Toolbox forum and an API key from your forum's Integrate > API settings.",
+  "author": {
+    "name": "Website Toolbox",
+    "email": "support@websitetoolbox.com",
+    "url": "https://www.websitetoolbox.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webtoolbox/websitetoolbox-mcp"
+  },
+  "homepage": "https://www.websitetoolbox.com",
+  "documentation": "https://www.websitetoolbox.com/support/api-documentation-663",
+  "support": "https://github.com/webtoolbox/websitetoolbox-mcp/issues",
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server/index.js"],
+      "env": {
+        "WEBSITETOOLBOX_API_KEY": "${user_config.api_key}"
+      }
+    }
+  },
+  "user_config": {
+    "api_key": {
+      "type": "string",
+      "title": "API Key",
+      "description": "Your forum's API key. Find it in your forum's admin area under Integrate > API.",
+      "sensitive": true,
+      "required": true
+    }
+  },
+  "tools": [
+    { "name": "list_categories", "description": "List all forum categories" },
+    { "name": "get_category", "description": "Get a single category by ID" },
+    { "name": "create_category", "description": "Create a new forum category" },
+    { "name": "update_category", "description": "Update an existing category" },
+    { "name": "delete_category", "description": "Delete a category" },
+    { "name": "list_topics", "description": "List topics" },
+    { "name": "get_topic", "description": "Get a single topic by ID" },
+    { "name": "create_topic", "description": "Create a new topic with an initial post" },
+    { "name": "update_topic", "description": "Update a topic" },
+    { "name": "delete_topic", "description": "Delete a topic" },
+    { "name": "list_posts", "description": "List posts" },
+    { "name": "get_post", "description": "Get a single post by ID" },
+    { "name": "create_post", "description": "Create a new post (reply) in a topic" },
+    { "name": "update_post", "description": "Update a post" },
+    { "name": "delete_post", "description": "Delete a post" },
+    { "name": "list_users", "description": "List forum users" },
+    { "name": "get_user", "description": "Get a single user by ID" },
+    { "name": "create_user", "description": "Create a new forum user" },
+    { "name": "update_user", "description": "Update a user" },
+    { "name": "delete_user", "description": "Delete a user" },
+    { "name": "list_user_groups", "description": "List all user groups" },
+    { "name": "create_user_group", "description": "Create a new user group" },
+    { "name": "list_conversations", "description": "List private conversations" },
+    { "name": "create_conversation", "description": "Start a new private conversation" },
+    { "name": "list_messages", "description": "List messages in a conversation" },
+    { "name": "create_message", "description": "Send a message in a conversation" },
+    { "name": "list_moderators", "description": "List all category moderators" },
+    { "name": "list_tags", "description": "List all forum tags" },
+    { "name": "list_notifications", "description": "List notifications" },
+    { "name": "list_page_views", "description": "List page view analytics" }
+  ],
+  "tools_generated": true,
+  "keywords": ["forum", "community", "websitetoolbox", "mcp", "ai", "chat"],
+  "license": "MIT",
+  "compatibility": {
+    "claude_desktop": ">=1.0.0",
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  }
+}
