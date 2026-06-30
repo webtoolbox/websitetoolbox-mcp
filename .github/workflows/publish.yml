@@ -18,9 +18,13 @@ jobs:
         with:
           node-version: '20'
 
+      - run: npm install -g npm@latest
+      - run: npm --version
       - run: npm ci
       - run: npm run build
-      - run: npm publish --access public --provenance
+      - run: |
+          rm -f ~/.npmrc
+          npm publish --access public --provenance
 
   bundle:
     runs-on: ubuntu-latest
