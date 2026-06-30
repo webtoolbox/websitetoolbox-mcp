@@ -1,7 +1,7 @@
 {
   "name": "websitetoolbox-mcp",
-  "version": "1.1.0",
-  "description": "MCP server for Website Toolbox community forum platform \u2014 manage Categories, Topics, Posts, Users, and more via the Forum REST API",
+  "version": "1.1.1",
+  "description": "MCP server for Website Toolbox community forum platform — manage Categories, Topics, Posts, Users, and more via the Forum REST API",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
