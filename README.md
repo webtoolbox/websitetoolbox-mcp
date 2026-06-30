@@ -2,7 +2,7 @@
 
 Chat with your forum using AI. The Website Toolbox MCP server lets you manage categories, topics, posts, users, and more through any MCP-compatible AI tool like [Claude Desktop](https://claude.ai), [Cursor](https://cursor.com), or [Hermes Agent](https://github.com/nousresearch/hermes-agent).
 
-## Install in Claude Desktop (one click)
+## Install in Claude Desktop
 
 1. Open [Claude Desktop](https://claude.ai/download). If you don't have it, download it first.
 2. [Download the .mcpb bundle](https://github.com/webtoolbox/websitetoolbox-mcp/releases/latest/download/websitetoolbox-mcp.mcpb).
