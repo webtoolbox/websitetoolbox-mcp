@@ -40,7 +40,7 @@ npm run build
 
 ## Configure
 
-1. **Get your API key** from your forum's **Integrate → API** settings.
+1. **Get your [API key](https://www.websitetoolbox.com/support/getting-your-api-key-252)** from your forum's **Integrate → API** settings.
 
 2. **Set it as an environment variable:**
 
