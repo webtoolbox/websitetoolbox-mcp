@@ -1,4 +1,4 @@
-name: Publish to npm
+name: Publish to npm & Release
 
 on:
   push:
@@ -18,15 +18,28 @@ jobs:
         with:
           node-version: '20'
 
-      - run: npm install -g npm@latest
-      - run: npm --version
       - run: npm ci
       - run: npm run build
-      - run: |
-          rm -f ~/.npmrc
-          npm publish --access public --provenance
+      - run: npm publish --access public --provenance
+
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required to create releases
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ github.ref_name }}" \
+            --repo "${{ github.repository }}" \
+            --title "${{ github.ref_name }}" \
+            --generate-notes
 
   bundle:
+    needs: release  # Wait for release to exist before uploading
     runs-on: ubuntu-latest
     permissions:
       contents: write  # Required to upload release assets
