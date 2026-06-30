@@ -52,12 +52,12 @@ jobs:
         run: |
           cd bundle
           mcpb pack
-          mv bundle.mcpb ../websitetoolbox-mcp-${{ github.ref_name }}.mcpb
+          mv bundle.mcpb ../websitetoolbox-mcp.mcpb
 
       - name: Upload bundle to release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release upload "${{ github.ref_name }}" \
-            "websitetoolbox-mcp-${{ github.ref_name }}.mcpb" \
+            "websitetoolbox-mcp.mcpb" \
             --repo "${{ github.repository }}"
