@@ -10,22 +10,23 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      id-token: write  # Required for npm OIDC provenance
+      id-token: write  # Required for npm OIDC trusted publishing
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'  # Node 24+ ships npm ≥ 11.5.1 required for OIDC
+          registry-url: 'https://registry.npmjs.org'
 
       - run: npm ci
       - run: npm run build
-      - run: npm publish --access public --provenance
+      - run: npm publish --access public
 
   release:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Required to create releases
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -39,16 +40,16 @@ jobs:
             --generate-notes
 
   bundle:
-    needs: release  # Wait for release to exist before uploading
+    needs: release
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Required to upload release assets
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
 
       - run: npm ci
       - run: npm run build
